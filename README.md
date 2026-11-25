@@ -20,9 +20,8 @@ nxc smb 10.0.0.50 -u user -p 'Passw0rd' -M dcinfo
 [+]   DC dc02.corp.local [10.0.0.6] site=Branch roles=ldap,kerberos,gc
 ```
 
-## Почему это тихо и почему не `-x nslookup`
 
-`nxc smb ... -x nslookup` — это удалённое исполнение: нужен администратор на цели, создаётся процесс `nslookup.exe` (CmdLine, ParentProcess, дерево процессов). Это ровно тот шаблон, который ловят EDR/AV, и ровно то, чего не бывает без админских прав.
+`nxc smb ... -x nslookup` — это удалённое исполнение: нужен администратор на цели, создаётся процесс `nslookup.exe` (CmdLine, ParentProcess, дерево процессов).
 
 | | `-x nslookup` | `dcinfo` |
 |---|---|---|
